@@ -18,7 +18,7 @@ var fs = require("fs");
 var cache = {};
 //console.log("staticDir:", staticDir);
 cache[index] = fs.readFileSync(path.join(homeDir, '/index.html'));
-//cache[fourohfour] = fs.readFileSync(path.join(homeDir, '/404.html'));
+cache[fourohfour] = fs.readFileSync(path.join(homeDir, '/404.html'));
 cache[style] = fs.readFileSync(path.join(cssDir, '/style.css'));
 cache[style2] = fs.readFileSync(path.join(cssDir, '/style2.css'));
 cache[reset] = fs.readFileSync(path.join(cssDir, '/reset.css'));
@@ -31,10 +31,11 @@ var server = http.createServer(function(req, res){
 	url = req.url.substr(1);
 	console.log("== url:", url);
 
-	if(url==index || url==style || /*url==notFound ||*/ url=='')
+	if(url==index || url==style || url==fourohfour || url=='')
 	{
 			res.statusCode = 200;
 			console.log("== Status Code:", res.statusCode);
+			console.log("== current dir: ", __dirname)
 			if(url==index || url==''){
 				res.write(cache[index]);
 			}
