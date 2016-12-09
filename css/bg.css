@@ -1,0 +1,137 @@
+/* Vars ----------------------------------------------------*//* Mixins ----------------------------------------------------*//* Colors and backgrounds  ----------------------------------------------------*/body {
+  color: #656360;
+  background: #f1ede8 url(../img/noise-all.png);
+}
+body a:hover {
+  color: #7ADAFF;
+}
+a {
+  color: #7ADAFF;
+}
+header,
+footer {
+  background: #2d2d2d;
+}
+/* Selection colours (easy to forget) */
+::selection {
+  background: #7ADAFF;
+}
+::-moz-selection {
+  background: #7ADAFF;
+}
+img::selection {
+  background: #7ADAFF;
+}
+img::-moz-selection {
+  background: #7ADAFF;
+}
+body {
+  -webkit-tap-highlight-color: #7ADAFF;
+}
+#headline,
+.masthead {
+  color: #444444;
+}
+/* NAVIGATION ------------------------------------------------------------*/
+#nav > li > a {
+  color: #ABBAC0;
+}
+#nav > li:hover > a {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-top: 3px solid #7ADAFF;
+}
+#nav span:hover {
+  -webkit-transform: translate(-10px, -3px);
+  -moz-transform: translate(-10px, -3px);
+  -o-transform: translate(-10px, -3px);
+  transform: translate(-10px, -3px);
+}
+#nav > li.current-menu-item > a,
+#nav > li.current_page_item > a {
+  border-top: 3px solid #7ADAFF;
+}
+#nav .sfHover ul {
+  background: #f8f5f2;
+}
+#nav .sfHover ul li a {
+  color: #444444;
+}
+#nav .sfHover ul li a:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #7ADAFF;
+}
+/* MAIN ------------------------------------------------------------*/
+.multiplebgs #main {
+  background-image: url(../img/main-bg.png), url(../img/main-bg.png);
+  background-repeat: repeat-x, repeat-x;
+  background-position: bottom left, top left;
+}
+.no-multiplebgs #main {
+  background: #f1f1f1 url(../img/main-bg.png) repeat-x top left;
+}
+/* FILTERED ITEMS ----------------------------------------------------*/#filter-buttons li a {
+  color: #444;
+  border-bottom: 2px solid transparent;
+}
+#filter-buttons li a:hover,
+#filter-buttons li a.selected {
+  border-bottom: 2px solid #7ADAFF;
+}
+#filter-container figure {
+  background: #f8f5f2;
+}
+#filter-container figure .thumb {
+  background: #3F7F97 url(../img/icon-link.png) center center no-repeat;
+}
+#filter-container figure figcaption .heading {
+  color: #444444;
+}
+#filter-container figure figcaption .heading:hover {
+  color: #3F7F97;
+}
+#filter-container figure .readmore {
+  color: #444444;
+}
+#filter-container figure .readmore:hover h5 {
+  color: #7ADAFF;
+}
+
+/* PAGE NAVIGATION ------------------------------------------------------------*/
+#main .page-navigation a {
+  color: #444444;
+}
+#main .page-navigation a:hover {
+  color: #7ADAFF;
+}
+/* SIDEBAR ------------------------------------------------------------*/
+#sidebar .cat-item a .post-counter,
+#sidebar .page_item a .post-counter {
+  color: #656360;
+}
+/* SLIDER ----------------------------------------------------*/.lof-slidecontent .slider-description {
+  color: #e6e6e6;
+}
+.lof-slidecontent .slider-description a {
+  color: #FFF;
+}
+.lof-slidecontent .slider-description a.readmore {
+  color: #fcb019;
+}
+.lof-slidecontent .active {
+  border-top: 3px #7ADAFF solid;
+}
+/* FOOTER ----------------------------------------------------*/footer {
+  color: #dcd2be;
+}
+footer h4 {
+  color: #fff;
+}
+footer a {
+  color: #7ADAFF;
+}
+footer a:hover {
+  color: #fff;
+}
