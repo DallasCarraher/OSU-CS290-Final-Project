@@ -1,6 +1,7 @@
 var path = require('path');
 
-var staticDir = path.join(__dirname, 'public');
+var homeDir = path.join(__dirname)
+var cssDir = path.join(__dirname, 'css');
 var index = 'index.html';
 //var fourohfour = '404.html';
 var style = 'style.css';
@@ -15,13 +16,13 @@ var url = require("url");
 var fs = require("fs");
 
 var cache = {};
-console.log("staticDir:", staticDir);
-cache[index] = fs.readFileSync(path.join(staticDir, '/index.html'));
-cache[fourohfour] = fs.readFileSync(path.join(staticDir, '/404.html'));
-cache[style] = fs.readFileSync(path.join(staticDir, '/style.css'));
-cache[style2] = fs.readFileSync(path.join(staticDir, '/style2.css'));
-cache[reset] = fs.readFileSync(path.join(staticDir, '/reset.css'));
-cache[bg] = fs.readFileSync(path.join(staticDir, '/bg.css'));
+//console.log("staticDir:", staticDir);
+cache[index] = fs.readFileSync(path.join(homeDir, '/index.html'));
+//cache[fourohfour] = fs.readFileSync(path.join(homeDir, '/404.html'));
+cache[style] = fs.readFileSync(path.join(cssDir, '/style.css'));
+cache[style2] = fs.readFileSync(path.join(cssDir, '/style2.css'));
+cache[reset] = fs.readFileSync(path.join(cssDir, '/reset.css'));
+cache[bg] = fs.readFileSync(path.join(cssDir, '/bg.css'));
 //cache[js] = fs.readFileSync(path.join(staticDir, '/js/file.js'));
 
 var server = http.createServer(function(req, res){
@@ -30,7 +31,7 @@ var server = http.createServer(function(req, res){
 	url = req.url.substr(1);
 	console.log("== url:", url);
 
-	if(url==index || url==style || url==notFound || url=='')
+	if(url==index || url==style || /*url==notFound ||*/ url=='')
 	{
 			res.statusCode = 200;
 			console.log("== Status Code:", res.statusCode);
