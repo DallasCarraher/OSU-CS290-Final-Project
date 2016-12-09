@@ -1,0 +1,18 @@
+{
+  "name": "final-project-dallas-david-trevor",
+  "version": "1.0.0",
+  "description": "Dynamic Music Content",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OSU-CS290-F16/final-project-dallas-david-trevor.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/OSU-CS290-F16/final-project-dallas-david-trevor",
+  "dependencies": {
+  }
+}
