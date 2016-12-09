@@ -1,0 +1,16 @@
+Git Quick Reference
+
+git clone <git@gitRepoAddress> (optionalDirName)
+--Clone repo to current directory
+
+git pull -- pulls origin (repo) to current branch
+
+git add -i -- interactively add untracked files and stage modified files
+
+git commit -m 'message goes here' -- commit staged files with commit message
+
+git push -- pushes changes to repo
+
+git checkout -b branchName -- creates and switches to new branch
+
+git merge branchName master -- merges changes from branchName to master. Do this after checking out the master branch
