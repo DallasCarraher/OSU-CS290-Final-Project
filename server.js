@@ -2,12 +2,14 @@ var path = require('path');
 
 var homeDir = path.join(__dirname)
 var cssDir = path.join(__dirname, 'css');
+var imgDir = path.join(__dirname, 'img');
 var index = 'index.html';
 var fourohfour = '404.html';
 var style = 'style.css';
 var style2 = 'style2.css';
 var reset = 'reset.css';
 var bg = 'bg.css';
+var logo = 'logo.png';
 //var js = ''; //for any js
 var port = process.env.PORT || 3000;
 
@@ -24,6 +26,7 @@ cache[style] = fs.readFileSync(path.join(cssDir, '/style.css'));
 cache[style2] = fs.readFileSync(path.join(cssDir, '/style2.css'));
 cache[reset] = fs.readFileSync(path.join(cssDir, '/reset.css'));
 cache[bg] = fs.readFileSync(path.join(cssDir, '/bg.css'));
+cache[logo] = fs.readFileSync(path.join(imgDir, 'logo.png'));
 //cache[js] = fs.readFileSync(path.join(staticDir, '/js/file.js'));
 
 var server = http.createServer(function(req, res){
@@ -31,8 +34,8 @@ var server = http.createServer(function(req, res){
 	var url = req.url;
 	url = req.url.substr(1);
 	console.log("== url:", url);
-	if(req.method.toLowerCase() == 'get'){
-	if(url==index || url==style || url==style2 || url==reset || url==bg || url==fourohfour || url=='')
+
+	if(url==index || url==style || url==style2 || url==reset || url==bg || url==fourohfour || url==logo || url=='')
 	{
 			res.statusCode = 200;
 			console.log("== Status Code:", res.statusCode);
@@ -54,6 +57,9 @@ var server = http.createServer(function(req, res){
       }
 			if(url==fourohfour){
 				res.write(cache[fourohfour]);
+			}
+			if(url==logo){
+				res.write(cache[logo]);
 			}
 			//if(url==js)
 			//{
