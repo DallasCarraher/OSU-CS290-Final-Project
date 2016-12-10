@@ -14,6 +14,7 @@ var port = process.env.PORT || 3000;
 var http = require("http");
 var url = require("url");
 var fs = require("fs");
+var formidable = require("formidable");
 
 var cache = {};
 //console.log("staticDir:", staticDir);
@@ -30,7 +31,7 @@ var server = http.createServer(function(req, res){
 	var url = req.url;
 	url = req.url.substr(1);
 	console.log("== url:", url);
-
+	if(req.method.toLowerCase() == 'get'){
 	if(url==index || url==style || url==style2 || url==reset || url==bg || url==fourohfour || url=='')
 	{
 			res.statusCode = 200;
@@ -66,7 +67,30 @@ var server = http.createServer(function(req, res){
 			res.write(cache['404.html']);
 			res.end();
 	}
+	}
+	else if(req.method.toLowerCase() == 'post'){
+		processForm(req, res);
+	}
 });
+
+function processForm(req, res) {
+	var form = new formidable.IncomingForm();
+
+	form.parse(req, function (err, fields, files) {
+		//Store the data from the fields in your data store.
+		//The data store could be a file or database or any other store based
+		//on your application.
+		res.writeHead(200, {
+				'content-type': 'text/plain'
+		});
+		res.write('received the data:\n\n');
+		res.end(util.inspect({
+			fields: fields,
+			files: files
+		}));
+		});
+}
+
 server.listen(port, function() {
   console.log("== Server listening on port:", port);
 });
