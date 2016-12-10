@@ -31,7 +31,7 @@ var server = http.createServer(function(req, res){
 	url = req.url.substr(1);
 	console.log("== url:", url);
 
-	if(url==index || url==style || url==fourohfour || url=='')
+	if(url==index || url==style || url==style2 || url==reset || url==bg || url==fourohfour || url=='')
 	{
 			res.statusCode = 200;
 			console.log("== Status Code:", res.statusCode);
